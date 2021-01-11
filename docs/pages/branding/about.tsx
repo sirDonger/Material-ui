@@ -41,6 +41,9 @@ const AboutUsRoot = styled(Box)<{}>(({ theme }) => ({
   '& .MuiGrid-bottomGutter': {
     marginBottom: theme.spacing(10),
   },
+  '&' : {
+    backgroundColor: '#F3F6F9'
+  },
   '& .MuiGrid-centered': {
     width: '100%',
     marginLeft: 'auto',
@@ -161,7 +164,9 @@ const AboutUsRoot = styled(Box)<{}>(({ theme }) => ({
   '& .MuiGrid-supportCardsWrapper': {
     [theme.breakpoints.up('lg')]: {
       padding: theme.spacing(6),
+      background: 'transparent',
     },
+
   },
   '& .MuiGrid-ourValues': {
     '&.MuiGrid-ourValues': {
@@ -218,6 +223,9 @@ const AboutUsRoot = styled(Box)<{}>(({ theme }) => ({
       },
     },
   },
+  '& [class*="MuiPaper-root-292"]' : {
+    backgroundColor: '#F3F6F9'
+  },
 }));
 
 const SupportCard = styled((props: any) => {
@@ -233,7 +241,7 @@ const SupportCard = styled((props: any) => {
   );
 })(({ color = 'primary', theme }) => ({
   '& [class*="MuiAvatar-root"]': {
-    background: color === 'main' ? theme.palette.vividBlue : theme.palette.primary.main,
+    background: color === 'primary' ? theme.palette.vividBlue : theme.palette.primary.main,
     width: 80,
     height: 80,
   },
@@ -317,8 +325,8 @@ function About() {
             <Typography variant="h2">Here is <UnderlinedText>what to expect</UnderlinedText></Typography>
             <Typography variant="h2">from Material UI</Typography>
           </Grid>
-          <Grid container className="MuiGrid-supportCardsWrapper">
-            <Grid item lg={6} md={12}>
+          <Grid container className="MuiGrid-supportCardsWrapper" style={{justifyContent: "space-around"}}>
+            <Grid item lg={5} md={12}>
               <SupportCard icon={<QuestionAnswerIcon fontSize="large"/>} title="Volume discount">
               The licenses are on a per-developer basis. We offer the following tiered discounts from list prices when purchasing more than one license for your development team: <br></br><br></br>
 
@@ -327,7 +335,7 @@ function About() {
               11+: License capped, extra developers do not need to be licensed.<br></br>
               </SupportCard>
             </Grid>
-            <Grid item lg={4} md={12}>
+            <Grid item lg={5} md={12}>
               <SupportCard
                 color="info"
                 icon={<FeedbackIcon fontSize="large" />}
@@ -341,7 +349,7 @@ function About() {
                 and other improvements into new releases; we don't patch, fix or in any way alter older versions.
               </SupportCard>
             </Grid>
-            <Grid item lg={6} md={12}>
+            <Grid item lg={5} md={12}>
               <SupportCard
                 color="info"
                 icon={<QuestionAnswerIcon fontSize="large" />}
@@ -357,7 +365,7 @@ function About() {
                 </Typography>
               </SupportCard>
             </Grid>
-            <Grid item lg={6} md={12}>
+            <Grid item lg={5} md={12}>
               <SupportCard icon={<QuestionAnswerIcon fontSize="large" />} title="Subscription renewal">
                 <Typography gutterBottom>
                 At the end of your subscription period, you will no longer be able to license the latest versions or access support without renewing. 
