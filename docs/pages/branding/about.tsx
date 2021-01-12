@@ -226,6 +226,31 @@ const AboutUsRoot = styled(Box)<{}>(({ theme }) => ({
   '& [class*="MuiPaper-root-292"]' : {
     backgroundColor: '#F3F6F9'
   },
+  '& [class*=MuiPaper-root-292]': {
+    [theme.breakpoints.up('lg')]: {
+      width: '470px',
+    }
+  },
+  '& [class*=MuiGrid-root-188]': {
+    [theme.breakpoints.up('lg')]: {
+      width: '1100px',
+    },
+    [theme.breakpoints.down('xl')]: {
+      margin: '0 auto',
+    },
+  },
+  '& [class*=MuiGrid-container-189]' : {
+    justifyContent: 'center',
+    margin: 'auto',
+  },
+  '& [class*=MuiGrid-items]' : {
+    paddingTop: '0 !important'
+  },
+  '& [class*=MuiGridHeading]' : {
+    [theme.breakpoints.down('lg')]: {
+      paddingLeft: '30px !important',
+    },
+  },
 }));
 
 const SupportCard = styled((props: any) => {
@@ -321,19 +346,21 @@ function About() {
   return (
     <>
       <AboutUsRoot> 
-        <Grid container spacing={1} className="MuiGrid-support MuiGrid-panel">
-          <Grid item xs={12}>
+      <Grid item xs={12} style={{padding: '120px 0 0 0', margin: '0 auto' }} className="MuiGridHeading">
             <Typography variant="h2">Here is <UnderlinedText>what to expect</UnderlinedText></Typography>
             <Typography variant="h2">from Material UI</Typography>
           </Grid>
+        <Grid container spacing={1} className="MuiGrid-support MuiGrid-panel MuiGrid-items">
           <Grid container className="MuiGrid-supportCardsWrapper" style={{justifyContent: "space-around"}}>
             <Grid item lg={5} md={12}>
               <SupportCard color="#21CC66" icon={<QuestionAnswerIcon fontSize="large" />} title="Volume discount">
+              <Typography gutterBottom style={{paddingTop: '20px'}}>
               The licenses are on a per-developer basis. We offer the following tiered discounts from list prices when purchasing more than one license for your development team: <br></br><br></br>
 
               2-5 Licenses: <span style={{fontWeight: "bold"}}>10% discount</span><br></br>
               6-10 Licenses: <span style={{fontWeight: "bold"}}>15% discount</span><br></br>
               11+: License capped, extra developers do not need to be licensed.<br></br>
+              </Typography>
               </SupportCard>
             </Grid>
             <Grid item lg={5} md={12}>
@@ -342,12 +369,14 @@ function About() {
                 icon={<FeedbackIcon fontSize="large" />}
                 title="Perpetual license"
               >
+                <Typography gutterBottom style={{paddingTop: '20px'}}>
                 When you purchase, <span style={{fontWeight: "bold"}}>you are granted a license to use a version of the product in perpetuity.</span> 
                 There are no further charges until you choose to extend your license to cover newer versions.<br></br><br></br>
 
                 Please note that while the use of the software is perpetual, support and corrective maintenance are not. 
                 We do not provide issue resolution to versions older than 12 months. We roll bug fixes, performance enhancements, 
                 and other improvements into new releases; we don't patch, fix or in any way alter older versions.
+                </Typography>
               </SupportCard>
             </Grid>
             <Grid item lg={5} md={12}>
@@ -357,7 +386,7 @@ function About() {
                 title="1-year subscription 
                 to new versions"
               >
-                <Typography gutterBottom> When you make a purchase <span style={{fontWeight: "bold"}}>you get a subscription to license new versions for 366 days.</span>
+                <Typography gutterBottom style={{paddingTop: '20px'}}> When you make a purchase <span style={{fontWeight: "bold"}}>you get a subscription to license new versions for 366 days.</span>
                 You can see our <Link href="/">changelog</Link>. After 366 days (or up to 5-year if you choose an extension package) you will no longer be allowed to use the latest versions without 
                 renewing your subscription. You can continue to use your licensed versions in perpetuity.</Typography><br></br>
 
@@ -368,7 +397,7 @@ function About() {
             </Grid>
             <Grid item lg={5} md={12}>
               <SupportCard color="#21CC66" icon={<QuestionAnswerIcon fontSize="large" />} title="Subscription renewal">
-                <Typography gutterBottom>
+                <Typography gutterBottom style={{paddingTop: '20px'}}>
                 At the end of your subscription period, you will no longer be able to license the latest versions or access support without renewing. 
                 This could range from 366 days up to a 5-year term. <span style={{fontWeight: "bold"}}>Renewal pricing is substantially lower than first-year subscription costs.</span>
                 </Typography><br></br>
