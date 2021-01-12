@@ -241,7 +241,8 @@ const SupportCard = styled((props: any) => {
   );
 })(({ color = 'primary', theme }) => ({
   '& [class*="MuiAvatar-root"]': {
-    background: color === 'primary' ? theme.palette.vividBlue : theme.palette.primary.main,
+    // background: color === 'primary' ? theme.palette.vividBlue : theme.palette.primary.main,
+    background: color,
     width: 80,
     height: 80,
   },
@@ -327,7 +328,7 @@ function About() {
           </Grid>
           <Grid container className="MuiGrid-supportCardsWrapper" style={{justifyContent: "space-around"}}>
             <Grid item lg={5} md={12}>
-              <SupportCard icon={<QuestionAnswerIcon fontSize="large"/>} title="Volume discount">
+              <SupportCard color="#21CC66" icon={<QuestionAnswerIcon fontSize="large" />} title="Volume discount">
               The licenses are on a per-developer basis. We offer the following tiered discounts from list prices when purchasing more than one license for your development team: <br></br><br></br>
 
               2-5 Licenses: <span style={{fontWeight: "bold"}}>10% discount</span><br></br>
@@ -337,7 +338,7 @@ function About() {
             </Grid>
             <Grid item lg={5} md={12}>
               <SupportCard
-                color="info"
+                color="#00C8FF"
                 icon={<FeedbackIcon fontSize="large" />}
                 title="Perpetual license"
               >
@@ -351,7 +352,7 @@ function About() {
             </Grid>
             <Grid item lg={5} md={12}>
               <SupportCard
-                color="info"
+                color="#007FFF"
                 icon={<QuestionAnswerIcon fontSize="large" />}
                 title="1-year subscription 
                 to new versions"
@@ -366,7 +367,7 @@ function About() {
               </SupportCard>
             </Grid>
             <Grid item lg={5} md={12}>
-              <SupportCard icon={<QuestionAnswerIcon fontSize="large" />} title="Subscription renewal">
+              <SupportCard color="#21CC66" icon={<QuestionAnswerIcon fontSize="large" />} title="Subscription renewal">
                 <Typography gutterBottom>
                 At the end of your subscription period, you will no longer be able to license the latest versions or access support without renewing. 
                 This could range from 366 days up to a 5-year term. <span style={{fontWeight: "bold"}}>Renewal pricing is substantially lower than first-year subscription costs.</span>
